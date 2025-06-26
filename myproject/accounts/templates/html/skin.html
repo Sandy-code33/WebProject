@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Chatbot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    .chatbox {
+      width: 400px;
+      max-height: 500px;
+      overflow-y: auto;
+      border: 2px solid #888;
+      border-radius: 10px;
+      padding: 15px;
+      background: #fff;
+      margin-bottom: 10px;
+    }
+    .chat {
+      margin: 10px 0;
+    }
+    .bot {
+      color: blue;
+    }
+    .user {
+      color: green;
+      text-align: right;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🤖 Chatbot</h2>
+  <div class="chatbox" id="chatbox">
+    <div class="chat bot">🤖 Chatbot: Hello! I am your virtual assistant.</div>
+    <div class="chat bot">🤖 Chatbot: What's your name?</div>
+  </div>
+  <input type="text" id="userInput" placeholder="Type your message..." />
+  <button onclick="handleUserInput()">Send</button>
+
+  <script>
+    let username = "";
+    let initialized = false;
+
+    function appendMessage(sender, message) {
+      const chatbox = document.getElementById("chatbox");
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `chat ${sender}`;
+      messageDiv.textContent = `${sender === "bot" ? "🤖 Chatbot" : username}: ${message}`;
+      chatbox.appendChild(messageDiv);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function handleUserInput() {
+      const inputField = document.getElementById("userInput");
+      const userText = inputField.value.trim();
+      if (userText === "") return;
+
+      inputField.value = "";
+      appendMessage("user", userText);
+
+      if (!initialized) {
+        username = userText;
+        initialized = true;
+        appendMessage("bot", `Nice to meet you, ${username}! How can I assist you today?`);
+        appendMessage("bot", "You can ask me about 'weather', 'time', 'help', or say 'bye' to exit.");
+        return;
+      }
+
+      const lowerText = userText.toLowerCase();
+
+      if (["hi", "hello", "hey"].includes(lowerText)) {
+        appendMessage("bot", "Hello! How can I help you? 😊");
+      } else if (lowerText === "weather") {
+        appendMessage("bot", "The weather is sunny 🌞 with a temperature of 30°C.");
+      } else if (lowerText === "time") {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        appendMessage("bot", `The current time is ${timeString} ⏰`);
+      } else if (lowerText === "help") {
+        appendMessage("bot", "I can answer questions about weather, time, and general help. Just ask!");
+      } else if (lowerText === "bye") {
+        appendMessage("bot", `Goodbye, ${username}! Have a great day! 👋`);
+        document.getElementById("userInput").disabled = true;
+      } else {
+        appendMessage("bot", "Sorry, I didn't understand that. Can you ask something else?");
+      }
+    }
+  </script>
+
+
+</body>
+</html>

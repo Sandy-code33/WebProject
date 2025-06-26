@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Order Tracking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">Track Your Order</h2>
+    <div class="input-group mb-3">
+        <input type="text" id="orderInput" class="form-control" placeholder="Enter Order ID">
+        <button class="btn btn-primary" onclick="trackOrder()">Track</button>
+    </div>
+    <div id="result" class="alert d-none"></div>
+</div>
+
+<script>
+function trackOrder() {
+    const orderId = document.getElementById("orderInput").value;
+    const resultDiv = document.getElementById("result");
+
+    fetch(`/api/track/${orderId}/`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const info = data.data;
+                resultDiv.className = "alert alert-success";
+                resultDiv.innerHTML = `
+                    <strong>Status:</strong> ${info.status} <br>
+                    <strong>Customer:</strong> ${info.customer} <br>
+                    <strong>Last Updated:</strong> ${info.last_updated}
+                `;
+            } else {
+                resultDiv.className = "alert alert-danger";
+                resultDiv.textContent = data.error;
+            }
+            resultDiv.classList.remove("d-none");
+        });
+}
+</script>
+</body>
+</html>
