@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import register_view, login_view, logout_view
 from .views import dashboard_view,feedback_form,Cart_product
-from .views import chatbox
+from .views import chatbox,dress
 from .import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -18,6 +18,8 @@ urlpatterns = [
     path('add-to-cart/', views.Cart_product, name='cart_product'),  # Existing POST handler
     path('delete/<int:item_id>/', views.delete_cart_item, name='delete_cart_item'),
     path('chat/',views.chatbox, name="chatbox"),
+    path('dress/',views.dress,name="dress"),
+
 
 ]
 if settings.DEBUG:

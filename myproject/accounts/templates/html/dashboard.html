@@ -272,10 +272,10 @@ position:inherit;
     </div>
     <!-- carousel ends -->
 
-    <div class="container-sm mt-5">
+    <div class="container-fluid mt-5">
       <div class="row g-2">
-          <div class="col-sm-4 col-lg-4 col-xxl-4 outer_box">
-            <h5>Summer Fashion <i class="fa-solid fa-circle-chevron-right"></i></h3>
+          <div class="col-sm-4 col-md-6 col-lg-4 col-xxl-4 outer_box">
+            <h5>Summer Fashion <a href="{% url 'dress' %}" role="button"><i class="fa-solid fa-circle-chevron-right"></i></a></h3>
             <div class="row g-2">
               <div class="col-6">
                 <div class="p-3 border bg-light">
@@ -308,7 +308,7 @@ position:inherit;
             </div>
           </div>
 
-          <div class="col-sm-4 col-lg-4 col-xxl-4 outer_box">
+          <div class="col-sm-4 col-md-6 col-lg-4 col-xxl-4 outer_box">
             <h5>Appliances for Cool Summer<i class="fa-solid fa-circle-chevron-right"></i></h3>
             <div class="row g-2">
               <div class="col-6">
@@ -342,7 +342,7 @@ position:inherit;
             </div>
           </div>
 
-          <div class="col-sm-4 col-lg-4 col-xxl-4 outer_box">
+          <div class="col-sm-4 col-md-6 col-lg-4 col-xxl-4 outer_box">
             <h5>Season's Top Picks<i class="fa-solid fa-circle-chevron-right"></i></h3>
             <div class="row g-2">
               <div class="col-6">
@@ -378,30 +378,24 @@ position:inherit;
       </div>
     </div>
 <!-- Mobile Cards -->
-  <div class="container-sm mt-5" style="background-color: rgb(255, 253, 253);">
+<div class="container-fluid mt-5" style="background-color: rgb(255, 253, 253);">
       <h2>Top Deals on SmartPhones </h2>
-      <div class="row g-3">
-        <div class="col-sm-2 product" data-product-id="1">
+    <div class="row g-3"> 
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2 product" data-product-id="1">
           <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
             {% csrf_token %}
             <div class="card" id="mob_card">
               <img src="{% static 'images/moto.png' %}" class="image_frame" name="pro_image" alt="Moto G85">
               <input type="hidden" name="pro_image" value="images/moto.png"> <!-- You must save image path manually -->
                 <div class="product text-center mx-auto">
-                    <p class="product-name" name="pro_name">Moto G85</p>
-                    <input type="hidden" name="pro_name" value="Moto G85">
+                    <p class="product-name" name="pro_name">Moto G85 5G (Urban Grey, 8GB Ram, 256 Storage)</p>
+                    <input type="hidden" name="pro_name" value="Moto G85 5G (Urban Grey, 12GB Ram+ 256 Storage)">
 
-                    <p class="product-price" data-price="15,999" name="pro_price">Rs.15,999</p>
-                    <input type="hidden" name="pro_price" value="15999">
+                    <p class="product-price" data-price="15,999" name="pro_price">Rs.15,897</p>
+                    <input type="hidden" name="pro_price" value="15897">
 
                     <input type="number" class="form-control" id="input_quan" name="pro_quantity" placeholder="Enter quantity" required>
-<!-- 
-                    <div class="row quantity-controls">
-                      <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
-                      <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
-                      <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
-                    </div> -->
-                      <!-- <p class="total-price mt-2 fw-bold"></p> -->
+
                         <div class="card-body mx-auto">
                         <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
                         <button class="btn btn-warning" onclick="buyProduct('Moto G85',15999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
@@ -411,44 +405,45 @@ position:inherit;
           </form>
         </div>
 
-      <div class="col-sm-2 product" data-product-id="2">
-        <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
-          {% csrf_token %}
-          <div class="card" id="mob_card">
-            <img src="{% static 'images/moto edge.png' %}" class="image_frame" name="pro_image" alt="Moto edge">
-            <input type="hidden" name="pro_image" value="images/moto edge.png">
-            <div class="product mx-auto">
-              <p class="product-name">Moto edge 50</p>
-              <input type="hidden" name="pro_name" value="Moto Edge 50">
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2 product" data-product-id="2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+            <div class="card" id="mob_card">
+              <img src="{% static 'images/moto edge.png' %}" class="image_frame" name="pro_image" alt="Moto edge">
+              <input type="hidden" name="pro_image" value="images/moto edge.png">
+              <div class="product mx-auto">
+                <p class="product-name">Motorola Edge 50 Fusion 5G (Hot Pink, 8GB RAM, 128GB Storage)</p>
+                <input type="hidden" name="pro_name" value="Motorola Edge 50 Fusion 5G (Hot Pink, 8GB RAM, 128GB Storage)">
 
-              <p class="product-price" data-price="18,999">Rs.18,999</p>
-              <input type="hidden" name="pro_price" value="18999">
+                <p class="product-price" data-price="18,999">Rs.18,884</p>
+                <input type="hidden" name="pro_price" value="18884">
 
-              <!-- <div class="row">
-                <div class="col-4">
-                <i class="fa-solid fa-plus mt-1 plus"></i></div>
-                <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
-                <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
-              </div> -->
-              <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
-            </div>
-              <div class="card-body mx-auto">
-                <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
-                <button class="btn btn-warning" onclick="buyProduct('Moto edge 50',18999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                <!-- <div class="row">
+                  <div class="col-4">
+                  <i class="fa-solid fa-plus mt-1 plus"></i></div>
+                  <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
+                  <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
+                </div> -->
+                <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
               </div>
-          </div>
-        </form>
-      </div>
-        <div class="col-sm-2">
+                <div class="card-body mx-auto">
+                  <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+                  <button class="btn btn-warning" onclick="buyProduct('Moto edge 50',18999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
           <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
             {% csrf_token %}
           <div class="card" id="mob_card">
-            <img src="{% static 'images/galaxyf16.jpg' %}" class="image_frame" name="pro_image" alt="">
-            <input type="hidden" name="pro_image" value="images/galaxyf16.jpg"> <!-- You must save image path manually -->
+            <img src="{% static 'images/galaxyf15.jpg' %}" class="image_frame" name="pro_image" alt="galaxyf15">
+            <input type="hidden" name="pro_image" value="images/galaxyf15.jpg"> <!-- You must save image path manually -->
 
             <div class="product mx-auto">
-            <p class="product-name">Samsung Galaxy F16</p>
-            <input type="hidden" name="pro_name" value="Samsung Galaxy F16">
+            <p class="product-name">Samsung Galaxy F15 5G (Jazzy Green, 6GB RAM, 128 GB Storage)</p>
+            <input type="hidden" name="pro_name" value="Samsung Galaxy F15 5G (Jazzy Green, 6GB RAM, 128 GB Storage)">
 
             <p class="product-price" data-price="14,999">Rs.14,999</p>
             <input type="hidden" name="pro_price" value="14999">
@@ -470,16 +465,16 @@ position:inherit;
           </form>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
           <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
             {% csrf_token %}
           <div class="card" id="mob_card">
-            <img src="{% static 'images/pocox7.png' %}" class="image_frame" name="pro_image" alt="">
-            <input type="hidden" name="pro_image" value="images/pocox7.png"> <!-- You must save image path manually -->
+            <img src="{% static 'images/Pocox7.jpg' %}" class="image_frame" name="pro_image" alt="">
+            <input type="hidden" name="pro_image" value="images/Pocox7.jpg"> <!-- You must save image path manually -->
 
             <div class="product mx-auto">
-            <p class="product-name">POCO X7</p>
-            <input type="hidden" name="pro_name" value="poco x7">
+            <p class="product-name">POCO X7 5G (Yellow, 8 GB RAM, 256 GB Storage)</p>
+            <input type="hidden" name="pro_name" value="POCO X7 5G (Yellow, 8 GB RAM, 256 GB Storage)">
 
             <p class="product-price" data-price="">Rs.18,999</p>
             <input type="hidden" name="pro_price" value="18999">
@@ -500,19 +495,19 @@ position:inherit;
           </form>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
           <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
             {% csrf_token %}
           <div class="card" id="mob_card">
-            <img src="{% static 'images/oppok12.png' %}" class="image_frame" name="pro_image" alt="">
+            <img src="{% static 'images/oppok12.png' %}" class="image_frame" name="pro_image" alt="oppok12x">
             <input type="hidden" name="pro_image" value="images/oppok12.png"> <!-- You must save image path manually -->
 
             <div class="product mx-auto">
-            <p class="product-name">OPPO K12 5G</p>
-            <input type="hidden" name="pro_name" value="OPPO K12 5G">
+            <p class="product-name">Oppo K12x 5G (Breeze Blue, 6 GB RAM, 128 GB Storage)</p>
+            <input type="hidden" name="pro_name" value="Oppo K12x 5G (Breeze Blue, 6 GB RAM, 128 GB Storage)">
 
-            <p class="product-price" data-price="12,999">Rs.12,999</p>
-            <input type="hidden" name="pro_price" value="12999">
+            <p class="product-price" data-price="12,999">Rs.12,646</p>
+            <input type="hidden" name="pro_price" value="12646">
 
             <!-- <div class="row">
               <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
@@ -530,19 +525,168 @@ position:inherit;
           </form>
         </div>
 
-      <div class="col-sm-2">
-        <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
-          {% csrf_token %}
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+            <div class="card" id="mob_card">
+              <img src="{% static 'images/redminote14.png' %}" class="image_frame" name="pro_image" alt="">
+              <input type="hidden" name="pro_image" value="images/redminote14.png"> <!-- You must save image path manually -->
+
+              <div class="product mx-auto">
+              <p class="product-name">Redmi Note 14 Pro+ 5G (Titan Black, 8GB RAM+ 128GB Storage)</p>
+              <input type="hidden" name="pro_name" value="Redmi Note 14 Pro+ 5G (Titan Black, 8GB RAM+ 128GB Storage)">
+
+              <p class="product-price" data-price="15,999">Rs.25,999</p>
+              <input type="hidden" name="pro_price" value="25999">
+
+              <!-- <div class="row">
+                <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
+                <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
+                <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
+              </div> -->
+              <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
+
+                </div>
+                    <div class="card-body mx-auto">
+                      <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+                      <button class="btn btn-warning" onclick="buyProduct('Moto G85 5G',15999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
+  </div>
+</div>
+  <!-- second row -->
+<div class="container-fluid">
+  <div class="row g-3 mt-1">
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2 product" data-product-id="1">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+            <div class="card" id="mob_card">
+              <img src="{% static 'images/iqooz9.jpg' %}" class="image_frame" name="pro_image" alt="iQoo z9">
+              <input type="hidden" name="pro_image" value="images/iqooz9.jpg"> <!-- You must save image path manually -->
+                <div class="product text-center mx-auto">
+                    <p class="product-name" name="pro_name">iQOO Z9s 5G (Titanium Matte, 8GB RAM, 256GB Storage)</p>
+                    <input type="hidden" name="pro_name" value="iQOO Z9s 5G (Titanium Matte, 8GB RAM, 256GB Storage)">
+
+                    <p class="product-price" data-price="15,999" name="pro_price">Rs.17,998</p>
+                    <input type="hidden" name="pro_price" value="17998">
+
+                    <input type="number" class="form-control" id="input_quan" name="pro_quantity" placeholder="Enter quantity" required>
+
+                        <div class="card-body mx-auto">
+                        <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+                        <button class="btn btn-warning" onclick="buyProduct('Moto G85',15999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                        </div>
+                </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2 product" data-product-id="2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+            <div class="card" id="mob_card">
+              <img src="{% static 'images/Oneplusnordce4.jpg' %}" class="image_frame" name="pro_image" alt="Oneplusnordce4">
+              <input type="hidden" name="pro_image" value="images/Oneplusnordce4.jpg">
+              <div class="product mx-auto">
+                <p class="product-name">OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)</p>
+                <input type="hidden" name="pro_name" value="OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)">
+
+                <p class="product-price" data-price="18,999">Rs.17,997</p>
+                <input type="hidden" name="pro_price" value="17997">
+
+                <!-- <div class="row">
+                  <div class="col-4">
+                  <i class="fa-solid fa-plus mt-1 plus"></i></div>
+                  <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
+                  <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
+                </div> -->
+                <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
+              </div>
+                <div class="card-body mx-auto">
+                  <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+                  <button class="btn btn-warning" onclick="buyProduct('Moto edge 50',18999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
           <div class="card" id="mob_card">
-            <img src="{% static 'images/moto.png' %}" class="image_frame" name="pro_image" alt="">
-            <input type="hidden" name="pro_image" value="images/moto.png"> <!-- You must save image path manually -->
+            <img src="{% static 'images/vivoy39.jpg' %}" class="image_frame" name="pro_image" alt="vivoy39">
+            <input type="hidden" name="pro_image" value="images/vivoy39.jpg"> <!-- You must save image path manually -->
 
             <div class="product mx-auto">
-            <p class="product-name">Moto G85</p>
-            <input type="hidden" name="pro_name" value="Moto G85">
+            <p class="product-name">Vivo Y39 5G (Lotus Purple, 8GB RAM, 256GB Storage)</p>
+            <input type="hidden" name="pro_name" value="Vivo Y39 5G (Lotus Purple, 8GB RAM, 256GB Storage)">
 
-            <p class="product-price" data-price="15,999">Rs.15,999</p>
-            <input type="hidden" name="pro_price" value="15999">
+            <p class="product-price" data-price="14,999">Rs.18,999</p>
+            <input type="hidden" name="pro_price" value="18999">
+
+            <!-- <div class="row">
+              <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
+              <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
+              <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
+            </div> -->
+            <!-- <p class="total-price mt-2 fw-bold"></p> -->
+            <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
+
+          </div>
+            <div class="card-body mx-auto">
+              <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+              <button class="btn btn-warning" onclick="buyProduct('Samsung Galaxy F16',14999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+            </div>
+          </div>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+          <div class="card" id="mob_card">
+            <img src="{% static 'images/realmep3.jpg' %}" class="image_frame" name="pro_image" alt="">
+            <input type="hidden" name="pro_image" value="images/realmep3.jpg"> <!-- You must save image path manually -->
+
+            <div class="product mx-auto">
+            <p class="product-name">realme P3x 5G (Midnight Blue, 6 GB RAM + 128GB Storage)</p>
+            <input type="hidden" name="pro_name" value="realme P3x 5G (Midnight Blue, 6 GB RAM + 128GB Storage)">
+
+            <p class="product-price" data-price="">Rs.12,640</p>
+            <input type="hidden" name="pro_price" value="12640">
+
+            <!--  <div class="row">
+             <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
+              <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
+              <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
+            </div> -->
+            <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
+
+          </div>
+            <div class="card-body mx-auto">
+              <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+              <button class="btn btn-warning" onclick="buyProduct('POCO X7',18999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+            </div>
+          </div>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+          <div class="card" id="mob_card">
+            <img src="{% static 'images/tecno.jpg' %}" class="image_frame" name="pro_image" alt="Tecno pop 9">
+            <input type="hidden" name="pro_image" value="images/tecno.jpg"> <!-- You must save image path manually -->
+
+            <div class="product mx-auto">
+            <p class="product-name">Tecno POP 9 5G (Aurora Cloud, 8GB Ram, 128GB Storage)</p>
+            <input type="hidden" name="pro_name" value="Tecno POP 9 5G (Aurora Cloud, 8GB+128GB)">
+
+            <p class="product-price" data-price="12,999">Rs.9,699</p>
+            <input type="hidden" name="pro_price" value="9699">
 
             <!-- <div class="row">
               <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
@@ -551,20 +695,56 @@ position:inherit;
             </div> -->
             <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
 
-              </div>
-                  <div class="card-body mx-auto">
-                    <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
-                    <button class="btn btn-warning" onclick="buyProduct('Moto G85 5G',15999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
-                  </div>
-              </div>
           </div>
-        </form>
-      </div>
+            <div class="card-body mx-auto">
+              <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+              <button class="btn btn-warning" onclick="buyProduct('Oppo k12 5G',12999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+            </div>
+          </div>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-6 col-lg-2 col-xxl-2">
+          <form onsubmit="addToCart(event, this)" method="post" id="cart_product" action="{% url 'cart_product' %}">
+            {% csrf_token %}
+            <div class="card" id="mob_card">
+              <img src="{% static 'images/nothing.jpg' %}" class="image_frame" name="pro_image" alt="nothing">
+              <input type="hidden" name="pro_image" value="images/nothing.jpg"> <!-- You must save image path manually -->
+
+              <div class="product mx-auto">
+              <p class="product-name">Nothing Phone (2) (Dark Grey, 8 GB RAM, 128 GB Storage)</p>
+              <input type="hidden" name="pro_name" value="Nothing Phone (2) (Dark Grey, 8 GB RAM, 128 GB Storage)">
+
+              <p class="product-price" data-price="15,999">Rs.27,997</p>
+              <input type="hidden" name="pro_price" value="27997">
+
+              <!-- <div class="row">
+                <div class="col-4"><i class="fa-solid fa-plus mt-1 plus"></i></div>
+                <div class="col-4"><p class="fw-bold fs-large quantity" style="color: green;">1</p></div>
+                <div class="col-4"><i class="fa-solid fa-minus mt-1 minus"></i></div>
+              </div> -->
+              <input type="number" class="form-control" name="pro_quantity" placeholder="Enter quantity" required>
+
+                </div>
+                    <div class="card-body mx-auto">
+                      <button type="submit" class="btn btn-warning" onclick="addToCart(this.form)">Add to Cart</button>
+                      <button class="btn btn-warning" onclick="buyProduct('Moto G85 5G',15999)" href="#" data-bs-toggle="modal" data-bs-target="#buyModal">Buy</button>
+                    </div>
+                </div>
+            </div>
+          </form>
+        </div>
+
     </div>
+  </div>
+</div>
+
+
+
 <!-- Mobile card ends -->
 
 <!-- Laptop card starts -->
-<div class="container-sm mt-5" style="background-color: rgb(255, 253, 253);">
+<div class="container-fluid mt-5" style="background-color: rgb(255, 253, 253);">
   <h2>Top Deals on Laptops</h2>
 <div class="row g-3">
   <div class="col-sm-2 product">
@@ -708,41 +888,6 @@ position:inherit;
 </div>
 </div>
 <!-- Laptop card ends -->
-
-
-<!-- Feedback form -->
- 
-<!-- feedback ends -->
-
-<!-- addtoCart status start -->
- 
-<!-- <div class="modal fade" id="Cartmod" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button class="btn-close btn btn-danger" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-          <div class="col-md">
-           <h1 class="text-success">Congratulations...!</h1>
-           <div>
-            <img src="" alt="">
-           </div>
-           <h2 class="text-primary">Confirm Your Order to proceed</h2>
-           <p>Check the items in your order</p>
-            <ul id="cart"></ul>
-            <h2>Total Price</h2>
-            <p id="price"></p>
-            <p class="total-price mt-2 fw-bold"></p>
-              <button type="submit" onclick="confirmOrder()" class="btn btn-success w-100">
-                Confirm
-              </button>
-          </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 
 <!-- purchase modal  start-->
 <div class="modal fade" id="buyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

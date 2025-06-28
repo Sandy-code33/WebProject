@@ -89,3 +89,6 @@ def delete_cart_item(request, item_id):
 
 def chatbox(request):
     return render(request,'html/chat.html')
+
+def dress(request):
+    return render(request,'html/dress.html')

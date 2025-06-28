@@ -30,6 +30,6 @@ class Product(models.Model):
     # product_image = models.ImageField(upload_to='products/')
     product_quantity = models.IntegerField(default=1)
 
-    def __str__(self):
+    def __str__(self):  
         return self.product_name
 
